@@ -6,15 +6,40 @@
     background: #29b6f6;
 }
 .nav-logo{
-    width: 100px;
+    width: 80px;
 }
 .navbar{
     padding: 0 !important;
 }
 .navbar-collapse{
-    padding-top: 5px;
+    /*padding-top: 5px;*/
 }
 .nav-link{
     font-weight: 700;
     color: white !important;
+}
+.right-items{
+    color: white;
+    /*padding: 8px 0;*/
+    /*margin-bottom: 4px;*/
+    font-weight: 400;
+    font-size: 14px;
+}
+.userName{
+    padding-right: 15px;
+}
+.userAvatar{
+    width: 20px;
+    background-color: white;
+    border-radius: 50%;
+    text-align: center;
+}
+.langBox{
+    align-items: center;
+    padding-left: 15px;
+    font-size: 12px;
+}
+.flag{
+    height: 12px;
+    margin: 5px;
 }
