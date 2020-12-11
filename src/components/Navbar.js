@@ -1,10 +1,10 @@
 import React from 'react';
 import "../styles/Navbar.css";
-import NavLogo from "../images/headerLogo.png"
+import NavLogo from "../images/menuLogoWhite.png"
 
 const Navbar = () => {
     return (
-        <nav className="navbar navbar-expand-md navbar-light bg-light">
+        <nav className="navbar navbar-expand-md navbar-dark bg-blue">
             <div className="container-fluid">
                 <a className="navbar-brand" href="#">
                     <img className="nav-logo" src={NavLogo} />
@@ -17,27 +17,25 @@ const Navbar = () => {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <a className="nav-link active" aria-current="page" href="#">Home</a>
+                            <a className="nav-link active" aria-current="page" href="#">Star</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Link</a>
-                        </li>
-                        <li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                               data-bs-toggle="dropdown" aria-expanded="false">
-                                Dropdown
-                            </a>
-                            <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><a className="dropdown-item" href="#">Action</a></li>
-                                <li><a className="dropdown-item" href="#">Another action</a></li>
-                                <li>
-                                    <hr className="dropdown-divider"/>
-                                </li>
-                                <li><a className="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
+                            <a className="nav-link" href="#">Top User</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link disabled" href="#" tabIndex="-1" aria-disabled="true">Disabled</a>
+                            <a className="nav-link" href="#">Wowmagazine</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="#">Wow stories</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="#">About Us</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="#">Rules</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="#">Contact Us</a>
                         </li>
                     </ul>
 
