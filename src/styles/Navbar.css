@@ -2,6 +2,19 @@
 .blue{
     color: #29b6f6;
 }
+.bg-blue{
+    background: #29b6f6;
+}
 .nav-logo{
     width: 100px;
+}
+.navbar{
+    padding: 0 !important;
+}
+.navbar-collapse{
+    padding-top: 5px;
+}
+.nav-link{
+    font-weight: 700;
+    color: white !important;
 }
