@@ -1,0 +1,6 @@
+/*custom carousel item*/
+.slick-slide > div {
+    width: 85%;
+    height: 250px;
+    margin: 0 12px;
+}

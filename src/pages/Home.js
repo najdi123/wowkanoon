@@ -1,7 +1,7 @@
 import Navbar from '../components/Navbar'
 import Layout from "../components/Layout";
 import React from "react";
-import Carousel from "../components/Carousel";
+import Carousel from "../components/carousel/Carousel";
 
 const Home = () => {
     return (
