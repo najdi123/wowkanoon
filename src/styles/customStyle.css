@@ -4,3 +4,7 @@
     height: 250px;
     margin: 0 12px;
 }
+
+*{
+    cursor: default;
+}
