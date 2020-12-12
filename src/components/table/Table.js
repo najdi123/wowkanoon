@@ -17,18 +17,22 @@ const Table = () => {
     return (
         <table className="table table-striped mt-4">
             <thead>
-            <tr className={styles.borderNone}>
-                <th scope="col"/>
-                <th scope="col">Name</th>
-                <th scope="col">Score</th>
-                <th scope="col">Grade</th>
-                <th scope="col">Words</th>
+            <tr  className={styles.borderNone}>
+                <th className={styles.header} scope="col"/>
+                <th scope="col">Name<div style={{height:30}}/></th>
+                <th scope="col">Score<div style={{height:30}}/></th>
+                <th scope="col">Grade<div style={{height:30}}/></th>
+                <th scope="col">Words<div style={{height:30}}/></th>
+
             </tr>
             </thead>
             <tbody>
             {data && data.map((item, index) => {
                 return (<tr key={index}>
-                    <th scope="row">{index + 1}{'.'}</th>
+                    <th className={styles.normal} scope="row">
+                        {index + 1}{'.'}
+                    <i className={`fas fa-user ${styles.normal}`}></i>
+                    </th>
                     <td>{item.Name}</td>
                     <td>{item.Score}</td>
                     <td>@mdo</td>

@@ -1,3 +1,9 @@
 .borderNone{
     border-style: hidden;
+    height: 100px;
 }
+
+.normal{
+    font-weight: normal;
+}
+
