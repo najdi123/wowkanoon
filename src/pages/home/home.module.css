@@ -12,3 +12,8 @@
     transform: translate(-50%, 0);
     font-size: 22px;
 }
+
+.text{
+    color: #094d6c;
+    text-align: center;
+}
