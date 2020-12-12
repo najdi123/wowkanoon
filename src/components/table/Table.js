@@ -15,28 +15,57 @@ const Table = () => {
     }, [])
 
     return (
-        <table className="table table-striped mt-4">
-            <thead>
-            <tr className={styles.borderNone}>
-                <th scope="col"/>
-                <th scope="col">Name</th>
-                <th scope="col">Score</th>
-                <th scope="col">Grade</th>
-                <th scope="col">Words</th>
-            </tr>
-            </thead>
-            <tbody>
-            {data && data.map((item, index) => {
-                return (<tr key={index}>
-                    <th scope="row">{index + 1}{'.'}</th>
-                    <td>{item.Name}</td>
-                    <td>{item.Score}</td>
-                    <td>@mdo</td>
-                    <td>@mdo</td>
-                </tr>)
-            })}
-            </tbody>
-        </table>
+     <div className='container'>
+         <table className="table table-striped mt-4">
+             <thead>
+             <tr  className={styles.borderNone}>
+                 <th className={styles.header} scope="col"/>
+                 <th scope="col">Name<div className={styles.header}/></th>
+                 <th scope="col">Score<div className={styles.header}/></th>
+                 <th scope="col">Grade<div className={styles.header}/></th>
+                 <th scope="col">Words<div className={styles.header}/></th>
+                 <th scope="col"><div className={styles.header}/></th>
+                 <th scope="col"><div  className={styles.header}/></th>
+                 <th scope="col"><div  className={styles.header}/></th>
+                 <th scope="col"><div  className={styles.header}/></th>
+                 <th scope="col"><div  className={styles.header}/></th>
+                 <th scope="col"><div  className={styles.header}/></th>
+                 <th scope="col"><div  className={styles.header}/></th>
+                 <th scope="col"><div  className={styles.header}/></th>
+                 <th scope="col"><div  className={styles.header}/></th>
+                 <th scope="col"><div  className={styles.header}/></th>
+                 <th scope="col"><div  className={styles.header}/></th>
+                 <th scope="col"><div  className={styles.header}/></th>
+             </tr>
+             </thead>
+             <tbody>
+             {data && data.map((item, index) => {
+                 return (<tr key={index}>
+                     <th className={styles.index} scope="row">
+                         {index + 1}{'.'}
+                         <i className={`fas fa-user ${styles.icon}`}></i>
+                     </th>
+                     <td>{item.Name}</td>
+                     <td>{item.Score}</td>
+                     <td>@mdo</td>
+                     <td>@mdo</td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                     <td></td>
+                 </tr>)
+             })}
+             </tbody>
+         </table>
+     </div>
     );
 };
 

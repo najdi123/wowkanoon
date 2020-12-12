@@ -1,3 +1,18 @@
 .borderNone{
     border-style: hidden;
+    height: 100px;
 }
+
+.header{
+    height:20px
+}
+
+.index{
+    font-weight: normal;
+}
+
+.icon{
+    font-weight: normal;
+    margin-left: 8px;
+}
+
