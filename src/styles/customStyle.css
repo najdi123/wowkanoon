@@ -21,3 +21,10 @@ form input {
     text-align: center;
     color: #7f9eb2;
 }
+.form-select{
+    width: 86%;
+    background-color: #f3f3f3;
+    border: none;
+    outline: none;
+    /*display: inline !important;*/
+}

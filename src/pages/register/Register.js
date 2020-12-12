@@ -36,7 +36,7 @@ const Register = () => {
                 </h5>
                 <form >
                     <input
-                        className={styles.form}
+                        className={`${styles.form} form-control d-inline-block`}
                         placeholder='    &#xf007;   Name'
                         // onChange={(e)=>setInput(prevState=>({...prevState, "name":e.target.value }))}
                         onChange={handleChange}
@@ -44,40 +44,69 @@ const Register = () => {
                         name="Name"
                     />
                     <input
-                        className={styles.form}
+                        className={`${styles.form} form-control d-inline-block`}
                         placeholder='    &#xf007;   Family Name'
                         onChange={handleChange}
                         value={input.Family}
                         name="Family"
                     />
                     <input
-                        className={styles.form}
+                        className={`${styles.form} form-control d-inline-block`}
                         placeholder='    &#xf023;   Password'
                         onChange={handleChange}
                         value={input.Password}
                         name="Password"
                     />
                     <input
-                        className={styles.form}
+                        className={`${styles.form} form-control d-inline-block`}
                         placeholder='    &#xf023;   Confirm Password'
                         onChange={handleChange}
                         value={input.Password2}
                         name="Password2"
                     />
                     <input
-                        className={styles.form}
+                        className={`${styles.form} form-control d-inline-block`}
                         placeholder='    &#xf10b;   Mobile'
                         onChange={handleChange}
                         value={input.CellPhoneNum}
                         name="CellPhoneNum"
                     />
+
                     <input
-                        className={styles.form}
+                        className={`${styles.form} form-control d-inline-block`}
                         placeholder='    &#xf0e0;   Email Address'
                         onChange={handleChange}
                         value={input.Email}
                         name="Email"
                     />
+
+                    <div className="d-flex justify-content-center">
+                        <select className="form-select" aria-label="Default select example">
+                            <option selected>Gender</option>
+                            <option value="1">Male</option>
+                            <option value="2">Female</option>
+
+                        </select>
+                    </div>
+
+                    <div className="d-flex justify-content-around">
+                        <div className="d-flex justify-content-center">
+                            <select className="form-select" aria-label="Default select example">
+                                <option selected>Gender</option>
+                                <option value="1">Male</option>
+                                <option value="2">Female</option>
+
+                            </select>
+                        </div>
+                        <div className="d-flex justify-content-center">
+                            <select className="form-select" aria-label="Default select example">
+                                <option selected>Gender</option>
+                                <option value="1">Male</option>
+                                <option value="2">Female</option>
+
+                            </select>
+                        </div>
+                    </div>
 
 
                 </form>
