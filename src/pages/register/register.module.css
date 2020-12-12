@@ -25,3 +25,6 @@
 .r-person{
     content: "\e02f";
 }
+.r-person:before {
+    content: "\e02f";
+}

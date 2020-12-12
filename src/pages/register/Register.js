@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from "./register.module.css";
-
+let test =`${<i className="r-person" ></i>} name"`
 const Register = () => {
     return (
         <div className={styles.register}>
@@ -9,9 +9,15 @@ const Register = () => {
                     REGISTER
                 </h5>
                 <form>
+                    <i className="fas fa-thumbs-up fa-5x"></i>
+                    {/*<i className={`r-person`} ></i>*/}
                     <input
-                        placeholder="name"
+                        placeholder={test}
+                        // className="r-person"
                     />
+                    <input
+                        style={{fontFamily: "FontAwesome"}}
+                        placeholder='&#xf002 Search...' />
                 </form>
             </div>
         </div>
