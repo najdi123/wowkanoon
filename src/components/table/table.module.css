@@ -3,7 +3,16 @@
     height: 100px;
 }
 
-.normal{
+.header{
+    height:20px
+}
+
+.index{
     font-weight: normal;
+}
+
+.icon{
+    font-weight: normal;
+    margin-left: 8px;
 }
 

@@ -10,13 +10,16 @@ const Home = () => {
         <Layout home>
             <div className='position-relative'>
                 <Header/>
-                <div className={styles.btnStart}>Start</div>
+                <div className={`shadow-lg ${styles.btnStart}`}>Start</div>
             </div>
 
             <div className="container mt-4">
-                <h3 className={styles.text}>Play with 7666 words and compete with 59346 learners in World of Words (WoW)</h3>
+                <h3 className={styles.text}>Play with 7666 words and compete with 59346 learners in World of Words
+                    (WoW)</h3>
+
+                <Table/>
+                <h3 className={styles.text}>Learn 7666 words from school textbooks, IELTS, TOEFL and GRE exams</h3>
                 <Carousel/>
-              <Table/>
             </div>
 
 
