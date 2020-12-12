@@ -65,8 +65,8 @@ const Carousel = () => {
         <div className={styles.carousel}>
             <Slider {...settings}>
                 {items.map((item, index) => {
-                    return (<div className={`${styles.carouselItem}`}>
-                        <img key={index} src={item}/>
+                    return (<div key={index} className={`${styles.carouselItem}`}>
+                        <img  src={item}/>
                     </div>)
                 })}
             </Slider>
