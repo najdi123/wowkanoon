@@ -16,7 +16,7 @@ const Header = () => {
                  <h1 className={styles.number}>81600</h1>
              </div>
                 <h2 className={styles.secondaryText}>English learners Of Worlds</h2>
-                <div className='d-flex'>
+                <div className='d-flex mb-20'>
                     <img src={kanoon} className={styles.btn}/>
                     <img src={kanoon} className={styles.btn}/>
                 </div>
@@ -25,6 +25,7 @@ const Header = () => {
                 <img src={mob1}/>
                 <img src={mob2}/>
             </div>
+            <div className={styles.btnStart}>Start</div>
         </div>
     );
 };
