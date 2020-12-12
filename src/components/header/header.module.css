@@ -23,6 +23,13 @@
     color: #80c5e9;
 }
 
+.topHeader{
+    font-size: 34px;
+}
+.bottomHeader{
+    font-size: 27px;
+}
+
 .btn{
     margin: 12px;
 }

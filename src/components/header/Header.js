@@ -10,12 +10,12 @@ const Header = () => {
         <div className={styles.container}>
             <div className='d-flex flex-column justify-content-center align-items-center'>
                 <img src={logo}/>
-                <h1>WORLD OF WORLDS</h1>
+                <h1 className={styles.topHeader}>WORLD OF WORLDS</h1>
              <div className='d-flex align-items-center'>
                  <h2 className={styles.secondText}>Compete with </h2>
                  <h1 className={styles.number}>81600</h1>
              </div>
-                <h2 className={styles.secondaryText}>English learners Of Worlds</h2>
+                <h2 className={styles.bottomHeader}>English learners Of Worlds</h2>
                 <div className='d-flex'>
                     <img src={kanoon} className={styles.btn}/>
                     <img src={kanoon} className={styles.btn}/>
