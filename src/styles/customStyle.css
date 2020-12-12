@@ -13,7 +13,7 @@ form input {
     border-radius: 5px;
     padding: 5px 0;
     width: 100%;
-    min-width: 150px;
+    /*min-width: 150px;*/
     max-width: 300px;
     font-family: "Font Awesome 5 Pro";
     font-weight: 900;
@@ -27,4 +27,7 @@ form input {
     border: none;
     outline: none;
     /*display: inline !important;*/
+}
+.d-flex .d-flex .form-select{
+    width: 127px;
 }

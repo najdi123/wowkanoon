@@ -10,6 +10,7 @@ const Table = () => {
             url: 'http://wow.kanoon.ir/api/contest/winners',
         })
             .then((res) => {
+                console.log("res: ",res)
                 setData(res.data['winners'])
             }).catch(err => console.log(err));
     }, [])
