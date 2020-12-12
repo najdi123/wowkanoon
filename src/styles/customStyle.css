@@ -9,9 +9,15 @@ h1,h2,h3,th{
     cursor: default;
 }
 
-.r-person{
-    content: "\e02f";
-}
-.r-person:before {
-    content: "\e02f";
+form input {
+    border-radius: 5px;
+    padding: 5px 0;
+    width: 100%;
+    min-width: 150px;
+    max-width: 300px;
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 900;
+    font-size: 16px;
+    text-align: center;
+    color: #7f9eb2;
 }
