@@ -1,6 +1,7 @@
 .container{
     background-color: #33a3dc;
     display: flex;
+    position: relative;
     color: white;
     justify-content: space-evenly;
     align-items: center;
@@ -32,4 +33,18 @@
 
 .btn{
     margin: 12px;
+}
+
+.btnStart{
+    position: absolute;
+    bottom: 0;
+    cursor: pointer;
+    color: white;
+    border-radius: 25px;
+    width: 220px;
+    background-color: #ed1c24;
+    text-align: center;
+    padding: 6px 0;
+    transform: translateY(50%);
+    font-size: 22px;
 }
