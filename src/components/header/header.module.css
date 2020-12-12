@@ -6,7 +6,7 @@
     justify-content: space-evenly;
     align-items: center;
     padding-bottom: 50px;
-    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%)
+    clip-path: polygon(0 0, 100% 0, 100% 91%, 0 100%)
 }
 
 .secondText {
@@ -34,7 +34,8 @@
 }
 
 .btn {
-    margin: 12px;
+    width: 47%;
+    cursor: pointer;
 }
 
 .btnStart {
@@ -49,4 +50,14 @@
     padding: 6px 0;
     transform: translateY(50%);
     font-size: 22px;
+}
+
+.space{
+    width: 6%;
+}
+
+.btnWrapper{
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 70px;
 }
