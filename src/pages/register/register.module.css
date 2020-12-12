@@ -22,9 +22,13 @@
 
     margin-top: 40px;
 }
-.r-person{
-    content: "\e02f";
-}
-.r-person:before {
-    content: "\e02f";
+.form{
+    text-align: left;
+    margin-bottom: 15px;
+    padding:5px 15px;
+
+    background-color: #f3f3f3;
+    border: none;
+    outline: none;
+    color: #7f9eb2;
 }
