@@ -1,4 +1,4 @@
-.container{
+.container {
     background-color: #33a3dc;
     display: flex;
     position: relative;
@@ -6,36 +6,38 @@
     justify-content: space-evenly;
     align-items: center;
     padding-bottom: 50px;
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%)
 }
 
-.secondText{
+.secondText {
     color: #80c5e9;
     display: inline-block;
 }
 
-.number{
+.number {
     color: #80c5e9;
     display: inline-block;
     font-size: 44px;
     margin-left: 10px;
 }
 
-.secondaryText{
+.secondaryText {
     color: #80c5e9;
 }
 
-.topHeader{
+.topHeader {
     font-size: 36px;
 }
-.bottomHeader{
+
+.bottomHeader {
     font-size: 27px;
 }
 
-.btn{
+.btn {
     margin: 12px;
 }
 
-.btnStart{
+.btnStart {
     position: absolute;
     bottom: 0;
     cursor: pointer;
