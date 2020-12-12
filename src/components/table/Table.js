@@ -40,7 +40,7 @@ const Table = () => {
              </thead>
              <tbody>
              {data && data.map((item, index) => {
-                 return (<tr key={index}>
+                 return (<tr className={styles.row} key={index}>
                      <th className={styles.index} scope="row">
                          {index + 1}{'.'}
                          <i className={`fas fa-user ${styles.icon}`}></i>
@@ -65,6 +65,7 @@ const Table = () => {
              })}
              </tbody>
          </table>
+
      </div>
     );
 };
