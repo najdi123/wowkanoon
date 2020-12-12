@@ -1,0 +1,28 @@
+.container{
+    background-color: #33a3dc;
+    display: flex;
+    color: white;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+.secondText{
+    color: #80c5e9;
+    display: inline-block;
+}
+
+.number{
+    color: #80c5e9;
+    display: inline-block;
+    font-size: 44px;
+    margin-left: 10px;
+}
+
+.secondaryText{
+    color: #80c5e9;
+}
+
+.btn{
+    margin: 12px;
+}
