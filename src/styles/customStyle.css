@@ -16,7 +16,7 @@ form input {
     /*min-width: 150px;*/
     max-width: 300px;
     font-family: "Font Awesome 5 Pro";
-    font-weight: 900;
+    font-weight: 600 !important;
     font-size: 16px;
     text-align: center;
     color: #7f9eb2;
@@ -29,5 +29,5 @@ form input {
     /*display: inline !important;*/
 }
 .d-flex .d-flex .form-select{
-    width: 127px;
+    width: 145px;
 }

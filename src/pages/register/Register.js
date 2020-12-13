@@ -1,14 +1,15 @@
 import React, {useState} from 'react';
 import styles from "./register.module.css";
+import axios from 'axios';
 
 let test = `${<i className="r-person"></i>} name"`
 const Register = () => {
     const [input, setInput] = useState({
         Name: "",
         Family: "",
-        Username: "بیسبیس",
+        Username: "",
         Password: "",
-        Password2: "",
+        // Password2: "",
         CellPhoneNum: "",
         Email: "",
         Grade: 0,
@@ -24,7 +25,7 @@ const Register = () => {
         isStu: 0,
         mobileVerified: 1
     })
-    console.log(input)
+
 
     const handleChange = ({target: {name, value, checked, type}}) => {
 
@@ -36,10 +37,30 @@ const Register = () => {
         }));
     };
 
-    const handleRegister = (e) => {
+    const handleRegister = async (e) => {
         e.preventDefault();
 
-        console.log(input)
+        let {Name, Family, Username, Password, CellPhoneNum, Email, Grade,
+            CountryCode, State, gradeNoS, MainCode, GroupCode, AreaCode, educationalMaingroups
+            , educationalSubgroups, Sex, isStu, mobileVerified
+        } = input
+
+        const config = {
+            headers: {'Content-Type': 'application/json'},
+            method: 'POST',
+            url: 'http://wow.kanoon.ir/api/user/phoneregister',
+            data: {Name,Family, Username, Password, CellPhoneNum, Email, Grade,
+                CountryCode, State, gradeNoS, MainCode, GroupCode, AreaCode, educationalMaingroups
+                , educationalSubgroups, Sex, isStu, mobileVerified },
+        };
+        console.log(config)
+        try {
+            const res = await axios(config)
+            console.log("res: ", res);
+            return res
+        } catch (error) {
+            console.log("error", error);
+        }
     }
     return (
         <div className={styles.register}>
@@ -50,7 +71,7 @@ const Register = () => {
                 <form>
                     <input
                         className={`${styles.form} form-control d-inline-block`}
-                        placeholder='    &#xf007;   Name'
+                        placeholder='&#xf007;   Name'
                         // onChange={(e)=>setInput(prevState=>({...prevState, "name":e.target.value }))}
                         onChange={handleChange}
                         value={input.Name}
@@ -58,28 +79,35 @@ const Register = () => {
                     />
                     <input
                         className={`${styles.form} form-control d-inline-block`}
-                        placeholder='    &#xf007;   Family Name'
+                        placeholder='&#xf007;   Family Name'
                         onChange={handleChange}
                         value={input.Family}
                         name="Family"
                     />
                     <input
                         className={`${styles.form} form-control d-inline-block`}
-                        placeholder='    &#xf023;   Password'
+                        placeholder='&#xf023;   Password'
                         onChange={handleChange}
                         value={input.Password}
                         name="Password"
                     />
+                    {/*<input*/}
+                    {/*    className={`${styles.form} form-control d-inline-block`}*/}
+                    {/*    placeholder='&#xf023;   Confirm Password'*/}
+                    {/*    onChange={handleChange}*/}
+                    {/*    value={input.Password2}*/}
+                    {/*    name="Password2"*/}
+                    {/*/>*/}
                     <input
                         className={`${styles.form} form-control d-inline-block`}
-                        placeholder='    &#xf023;   Confirm Password'
+                        placeholder='&#xf023;   Username'
                         onChange={handleChange}
-                        value={input.Password2}
-                        name="Password2"
+                        value={input.Username}
+                        name="Username"
                     />
                     <input
                         className={`${styles.form} form-control d-inline-block`}
-                        placeholder='    &#xf10b;   Mobile'
+                        placeholder='&#xf10b;   Mobile'
                         onChange={handleChange}
                         value={input.CellPhoneNum}
                         name="CellPhoneNum"
@@ -87,7 +115,7 @@ const Register = () => {
 
                     <input
                         className={`${styles.form} form-control d-inline-block`}
-                        placeholder='    &#xf0e0;   Email Address'
+                        placeholder='&#xf0e0;   Email Address'
                         onChange={handleChange}
                         value={input.Email}
                         name="Email"
@@ -107,12 +135,12 @@ const Register = () => {
                         </select>
                     </div>
 
-                    <div className="d-flex justify-content-around mb-3">
+                    <div className="d-flex justify-content-center mb-3">
                         <div className="d-flex justify-content-center">
                             <select
                                 name='State'
                                 onChange={handleChange}
-                                className="form-select" aria-label="Default select example">
+                                className="form-select m-1" aria-label="Default select example">
                                 <option selected>State</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -123,7 +151,7 @@ const Register = () => {
                             <select
                                 name='AreaCode'
                                 onChange={handleChange}
-                                className="form-select" aria-label="Default select example">
+                                className="form-select m-1" aria-label="Default select example">
                                 <option selected>City</option>
                                 <option value="1">Tehran</option>
                                 <option value="2">Karaj</option>
@@ -133,7 +161,7 @@ const Register = () => {
                     </div>
 
                     <div className="d-flex justify-content-around">
-                        <p>Are you a student?</p>
+                        <p className={styles.darkBlue}>Are you a student?</p>
                         <div className="form-check">
 
                             <label className="form-check-label" >
@@ -158,12 +186,12 @@ const Register = () => {
                         </div>
                     </div>
 
-                    <div className="d-flex justify-content-around mb-3">
+                    <div className="d-flex justify-content-center mb-4">
                         <div className="d-flex justify-content-center">
                             <select
                                 name='educationalMaingroups'
                                 onChange={handleChange}
-                                className="form-select" aria-label="Default select example">
+                                className="form-select  m-1" aria-label="Default select example">
                                 <option selected>ریاضی نظام جدید</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
@@ -174,7 +202,7 @@ const Register = () => {
                             <select
                                 name='educationalSubgroups'
                                 onChange={handleChange}
-                                className="form-select" aria-label="Default select example">
+                                className="form-select m-1" aria-label="Default select example">
                                 <option selected>کنکوری ها</option>
                                 <option value="1">Tehran</option>
                                 <option value="2">Karaj</option>
@@ -183,11 +211,11 @@ const Register = () => {
                         </div>
                     </div>
 
-                    <button onClick={handleRegister} className={`btn text-white ${styles.registerBtn}`}>Register
+                    <button onClick={handleRegister} className={`btn text-white mt-5 ${styles.registerBtn}`}>Register
                     </button>
-                    <p className={styles.darkBlue}>or</p>
+                    <p className={`${styles.darkBlue} pt-3`}>or</p>
                     <button className={`btn ${styles.kanoonBtn}`}>Sign in with kanoon.ir</button>
-
+                    <p className={`${styles.darkBlue} pt-5`}>Already have an account?</p>
 
                 </form>
             </div>
