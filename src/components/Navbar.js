@@ -11,7 +11,9 @@ const Navbar = () => {
     useEffect(()=>{
         const firstName= localStorage.getItem('Name');
         const lastName= localStorage.getItem('Family');
-        setUser(firstName+" "+lastName)
+        if(lastName && firstName){
+            setUser(firstName+" "+lastName)
+        }
     },[])
     console.log("user: ",user)
     return (
@@ -50,15 +52,16 @@ const Navbar = () => {
                         </li>
                     </ul>
                     <div className="right-items d-flex">
-                        {user ?
-                            (
-                                <div className={`d-flex navLog`}>
-                                    <Link to="/register" className={`p-1 darkBlue marginLeft linkStyleWhite`}>Register</Link>
-                                    <div className={`p-1 `}>|</div>
-                                    <Link to="/login" className={`p-1 darkBlue marginRight linkStyleWhite`}>Login</Link>
-                                </div>
-                            )
-                            :
+                        {!user &&
+                        (
+                            <div className={`d-flex navLog`}>
+                                <Link to="/register"
+                                      className={`p-1 darkBlue marginLeft linkStyleWhite`}>Register</Link>
+                                <div className={`p-1 `}>|</div>
+                                <Link to="/login" className={`p-1 darkBlue marginRight linkStyleWhite`}>Login</Link>
+                            </div>
+                        )
+                        }{user &&
 
                             (
                                 <>
