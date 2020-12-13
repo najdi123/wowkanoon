@@ -5,9 +5,11 @@ import axios from 'axios';
 const Table = () => {
     const [data, setData] = useState([]);
     useEffect(() => {
+        const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+        const Url = 'http://wow.kanoon.ir/api/contest/winners';
         axios({
             method: 'GET',
-            url: 'http://wow.kanoon.ir/api/contest/winners',
+            url: proxyUrl+Url,
         })
             .then((res) => {
                 console.log("res: ",res)

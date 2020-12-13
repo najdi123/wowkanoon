@@ -31,3 +31,10 @@ form input {
 .d-flex .d-flex .form-select{
     width: 145px;
 }
+.linkStyle{
+    text-decoration: none;
+}
+.linkStyleWhite{
+    text-decoration: none;
+    color: white;
+}

@@ -1,9 +1,12 @@
 import React, {useState} from 'react';
 import styles from "./register.module.css";
 import axios from 'axios';
+import WhiteNavbar from "../../components/WhiteNavbar/WhiteNavbar"
+import { useHistory } from "react-router-dom";
 
 let test = `${<i className="r-person"></i>} name"`
 const Register = () => {
+    let history = useHistory();
     const [input, setInput] = useState({
         Name: "",
         Family: "",
@@ -44,11 +47,12 @@ const Register = () => {
             CountryCode, State, gradeNoS, MainCode, GroupCode, AreaCode, educationalMaingroups
             , educationalSubgroups, Sex, isStu, mobileVerified
         } = input
-
+        const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+        const Url = 'http://wow.kanoon.ir/api/user/phoneregister';
         const config = {
             headers: {'Content-Type': 'application/json'},
             method: 'POST',
-            url: 'http://wow.kanoon.ir/api/user/phoneregister',
+            url: proxyUrl+Url,
             data: {Name,Family, Username, Password, CellPhoneNum, Email, Grade,
                 CountryCode, State, gradeNoS, MainCode, GroupCode, AreaCode, educationalMaingroups
                 , educationalSubgroups, Sex, isStu, mobileVerified },
@@ -57,167 +61,176 @@ const Register = () => {
         try {
             const res = await axios(config)
             console.log("res: ", res);
-            return res
+            localStorage.setItem('Name', res.data.Name);
+            localStorage.setItem('Family', res.data.Family);
+
+            // return res
+            history.push("/");
         } catch (error) {
             console.log("error", error);
         }
     }
+
     return (
-        <div className={styles.register}>
-            <div className={styles.container}>
-                <h5 className="mt-3 mb-4">
-                    REGISTER
-                </h5>
-                <form>
-                    <input
-                        className={`${styles.form} form-control d-inline-block`}
-                        placeholder='&#xf007;   Name'
-                        // onChange={(e)=>setInput(prevState=>({...prevState, "name":e.target.value }))}
-                        onChange={handleChange}
-                        value={input.Name}
-                        name="Name"
-                    />
-                    <input
-                        className={`${styles.form} form-control d-inline-block`}
-                        placeholder='&#xf007;   Family Name'
-                        onChange={handleChange}
-                        value={input.Family}
-                        name="Family"
-                    />
-                    <input
-                        className={`${styles.form} form-control d-inline-block`}
-                        placeholder='&#xf023;   Password'
-                        onChange={handleChange}
-                        value={input.Password}
-                        name="Password"
-                    />
-                    {/*<input*/}
-                    {/*    className={`${styles.form} form-control d-inline-block`}*/}
-                    {/*    placeholder='&#xf023;   Confirm Password'*/}
-                    {/*    onChange={handleChange}*/}
-                    {/*    value={input.Password2}*/}
-                    {/*    name="Password2"*/}
-                    {/*/>*/}
-                    <input
-                        className={`${styles.form} form-control d-inline-block`}
-                        placeholder='&#xf023;   Username'
-                        onChange={handleChange}
-                        value={input.Username}
-                        name="Username"
-                    />
-                    <input
-                        className={`${styles.form} form-control d-inline-block`}
-                        placeholder='&#xf10b;   Mobile'
-                        onChange={handleChange}
-                        value={input.CellPhoneNum}
-                        name="CellPhoneNum"
-                    />
+        <div>
+            <WhiteNavbar/>
+            <div className={styles.register}>
 
-                    <input
-                        className={`${styles.form} form-control d-inline-block`}
-                        placeholder='&#xf0e0;   Email Address'
-                        onChange={handleChange}
-                        value={input.Email}
-                        name="Email"
-                    />
-
-                    <div className="d-flex justify-content-center mb-3">
-                        <select
-                            className="form-select"
-                            aria-label="Default select example"
-                            name='Sex'
+                <div className={styles.container}>
+                    <h5 className="mt-3 mb-4">
+                        REGISTER
+                    </h5>
+                    <form>
+                        <input
+                            className={`${styles.form} form-control d-inline-block`}
+                            placeholder='&#xf007;   Name'
+                            // onChange={(e)=>setInput(prevState=>({...prevState, "name":e.target.value }))}
                             onChange={handleChange}
-                        >
-                            <option selected>Gender</option>
-                            <option value="1">Male</option>
-                            <option value="2">Female</option>
+                            value={input.Name}
+                            name="Name"
+                        />
+                        <input
+                            className={`${styles.form} form-control d-inline-block`}
+                            placeholder='&#xf007;   Family Name'
+                            onChange={handleChange}
+                            value={input.Family}
+                            name="Family"
+                        />
+                        <input
+                            className={`${styles.form} form-control d-inline-block`}
+                            placeholder='&#xf023;   Password'
+                            onChange={handleChange}
+                            value={input.Password}
+                            name="Password"
+                        />
+                        {/*<input*/}
+                        {/*    className={`${styles.form} form-control d-inline-block`}*/}
+                        {/*    placeholder='&#xf023;   Confirm Password'*/}
+                        {/*    onChange={handleChange}*/}
+                        {/*    value={input.Password2}*/}
+                        {/*    name="Password2"*/}
+                        {/*/>*/}
+                        <input
+                            className={`${styles.form} form-control d-inline-block`}
+                            placeholder='&#xf023;   Username'
+                            onChange={handleChange}
+                            value={input.Username}
+                            name="Username"
+                        />
+                        <input
+                            className={`${styles.form} form-control d-inline-block`}
+                            placeholder='&#xf10b;   Mobile'
+                            onChange={handleChange}
+                            value={input.CellPhoneNum}
+                            name="CellPhoneNum"
+                        />
 
-                        </select>
-                    </div>
+                        <input
+                            className={`${styles.form} form-control d-inline-block`}
+                            placeholder='&#xf0e0;   Email Address'
+                            onChange={handleChange}
+                            value={input.Email}
+                            name="Email"
+                        />
 
-                    <div className="d-flex justify-content-center mb-3">
-                        <div className="d-flex justify-content-center">
+                        <div className="d-flex justify-content-center mb-3">
                             <select
-                                name='State'
+                                className="form-select"
+                                aria-label="Default select example"
+                                name='Sex'
                                 onChange={handleChange}
-                                className="form-select m-1" aria-label="Default select example">
-                                <option selected>State</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
+                            >
+                                <option selected>Gender</option>
+                                <option value="1">Male</option>
+                                <option value="2">Female</option>
 
                             </select>
                         </div>
-                        <div className="d-flex justify-content-center">
-                            <select
-                                name='AreaCode'
-                                onChange={handleChange}
-                                className="form-select m-1" aria-label="Default select example">
-                                <option selected>City</option>
-                                <option value="1">Tehran</option>
-                                <option value="2">Karaj</option>
 
-                            </select>
+                        <div className="d-flex justify-content-center mb-3">
+                            <div className="d-flex justify-content-center">
+                                <select
+                                    name='State'
+                                    onChange={handleChange}
+                                    className="form-select m-1" aria-label="Default select example">
+                                    <option selected>State</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+
+                                </select>
+                            </div>
+                            <div className="d-flex justify-content-center">
+                                <select
+                                    name='AreaCode'
+                                    onChange={handleChange}
+                                    className="form-select m-1" aria-label="Default select example">
+                                    <option selected>City</option>
+                                    <option value="1">Tehran</option>
+                                    <option value="2">Karaj</option>
+
+                                </select>
+                            </div>
                         </div>
-                    </div>
 
-                    <div className="d-flex justify-content-around">
-                        <p className={styles.darkBlue}>Are you a student?</p>
-                        <div className="form-check">
+                        <div className="d-flex justify-content-around">
+                            <p className={styles.darkBlue}>Are you a student?</p>
+                            <div className="form-check">
 
-                            <label className="form-check-label" >
-                                Yes
-                            </label>
-                            <input
-                                onChange={handleChange}
-                                className="form-check-input" type="radio" name="isStu"
-                                   id="flexRadioDefault1"/>
+                                <label className="form-check-label" >
+                                    Yes
+                                </label>
+                                <input
+                                    onChange={handleChange}
+                                    className="form-check-input" type="radio" name="isStu"
+                                    id="flexRadioDefault1"/>
 
+                            </div>
+                            <div className="form-check">
+                                <label className="form-check-label" >
+                                    No
+                                </label>
+                                <input
+                                    onChange={handleChange}
+                                    className="form-check-input" type="radio" name="isStu"
+                                    id="flexRadioDefault2"
+                                    checked/>
+
+                            </div>
                         </div>
-                        <div className="form-check">
-                            <label className="form-check-label" >
-                                No
-                            </label>
-                            <input
-                                onChange={handleChange}
-                                className="form-check-input" type="radio" name="isStu"
-                                   id="flexRadioDefault2"
-                                   checked/>
 
+                        <div className="d-flex justify-content-center mb-4">
+                            <div className="d-flex justify-content-center">
+                                <select
+                                    name='educationalMaingroups'
+                                    onChange={handleChange}
+                                    className="form-select  m-1" aria-label="Default select example">
+                                    <option selected>ریاضی نظام جدید</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+
+                                </select>
+                            </div>
+                            <div className="d-flex justify-content-center">
+                                <select
+                                    name='educationalSubgroups'
+                                    onChange={handleChange}
+                                    className="form-select m-1" aria-label="Default select example">
+                                    <option selected>کنکوری ها</option>
+                                    <option value="1">Tehran</option>
+                                    <option value="2">Karaj</option>
+
+                                </select>
+                            </div>
                         </div>
-                    </div>
 
-                    <div className="d-flex justify-content-center mb-4">
-                        <div className="d-flex justify-content-center">
-                            <select
-                                name='educationalMaingroups'
-                                onChange={handleChange}
-                                className="form-select  m-1" aria-label="Default select example">
-                                <option selected>ریاضی نظام جدید</option>
-                                <option value="1">1</option>
-                                <option value="2">2</option>
+                        <button onClick={handleRegister} className={`btn text-white mt-5 ${styles.registerBtn}`}>Register
+                        </button>
+                        <p className={`${styles.darkBlue} pt-3`}>or</p>
+                        <button className={`btn ${styles.kanoonBtn}`}>Sign in with kanoon.ir</button>
+                        <p className={`${styles.darkBlue} pt-5`}>Already have an account?</p>
 
-                            </select>
-                        </div>
-                        <div className="d-flex justify-content-center">
-                            <select
-                                name='educationalSubgroups'
-                                onChange={handleChange}
-                                className="form-select m-1" aria-label="Default select example">
-                                <option selected>کنکوری ها</option>
-                                <option value="1">Tehran</option>
-                                <option value="2">Karaj</option>
-
-                            </select>
-                        </div>
-                    </div>
-
-                    <button onClick={handleRegister} className={`btn text-white mt-5 ${styles.registerBtn}`}>Register
-                    </button>
-                    <p className={`${styles.darkBlue} pt-3`}>or</p>
-                    <button className={`btn ${styles.kanoonBtn}`}>Sign in with kanoon.ir</button>
-                    <p className={`${styles.darkBlue} pt-5`}>Already have an account?</p>
-
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
     );
