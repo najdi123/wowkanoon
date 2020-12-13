@@ -52,28 +52,29 @@ const Navbar = () => {
                     <div className="right-items d-flex">
                         {user ?
                             (
-                                <>
-                                <Link to="/user" className="d-flex linkStyle">
-                                    <div className={`userName ${styles.userName}`}>{user}</div>
-                                    <div className={`userAvatar ${styles.userAvatar}`}>
-                                        '
-                                    </div>
-                                </Link>
-                                <Link to="#" className="langBox d-flex linkStyle">
-                                    <div className="langBox d-flex">
-                                        <div className={styles.userName}>FA</div>
-                                        <img className="flag" src={IranFlag} alt=""/>
-                                    </div>
-                                </Link>
-                                </>
-                            )
-                            :
-                            (
                                 <div className={`d-flex navLog`}>
                                     <Link to="/register" className={`p-1 darkBlue marginLeft linkStyleWhite`}>Register</Link>
                                     <div className={`p-1 `}>|</div>
                                     <Link to="/login" className={`p-1 darkBlue marginRight linkStyleWhite`}>Login</Link>
                                 </div>
+                            )
+                            :
+
+                            (
+                                <>
+                                    <Link to="/user" className="d-flex linkStyle">
+                                        <div className={`userName ${styles.userName}`}>{user}</div>
+                                        <div className={`userAvatar ${styles.userAvatar}`}>
+                                            '
+                                        </div>
+                                    </Link>
+                                    <Link to="#" className="langBox d-flex linkStyle">
+                                        <div className="langBox d-flex">
+                                            <div className={styles.userName}>FA</div>
+                                            <img className="flag" src={IranFlag} alt=""/>
+                                        </div>
+                                    </Link>
+                                </>
                             )
                         }
                     </div>

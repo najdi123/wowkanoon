@@ -52,6 +52,15 @@ const Navbar = () => {
                     <div className="right-items d-flex">
                         {user ?
                             (
+                                <div className={`d-flex ${styles.navLog}`}>
+                                    <Link to="/register" className={`p-1 linkStyle ${styles.darkBlue} ${styles.marginLeft}`}>Register</Link>
+                                    <div className={`p-1 `}>|</div>
+                                    <Link to="/login" className={`p-1 linkStyle ${styles.darkBlue} ${styles.marginRight}`}>Login</Link>
+                                </div>
+                            )
+                            :
+
+                            (
                                 <>
                                     <Link to="/user" className="d-flex linkStyle">
                                         <div className={`userName ${styles.userName}`}>{user}</div>
@@ -64,14 +73,6 @@ const Navbar = () => {
                                         <img className="flag" src={IranFlag} alt=""/>
                                     </Link>
                                 </>
-                            )
-                            :
-                            (
-                                <div className={`d-flex ${styles.navLog}`}>
-                                    <Link to="/register" className={`p-1 linkStyle ${styles.darkBlue} ${styles.marginLeft}`}>Register</Link>
-                                    <div className={`p-1 `}>|</div>
-                                    <Link to="/login" className={`p-1 linkStyle ${styles.darkBlue} ${styles.marginRight}`}>Login</Link>
-                                </div>
                             )
                         }
                     </div>
