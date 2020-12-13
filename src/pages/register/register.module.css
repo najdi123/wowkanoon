@@ -25,11 +25,12 @@
 }
 .form{
     text-align: left;
-    margin-bottom: 15px;
+    margin-bottom: 9px;
     padding:5px 15px;
 
     background-color: #f3f3f3;
     border: none;
+    border-radius: 13px;
     outline: none;
     color: #7f9eb2;
 }

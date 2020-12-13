@@ -77,9 +77,9 @@ const Register = () => {
             <div className={styles.register}>
 
                 <div className={styles.container}>
-                    <h5 className="mt-3 mb-4">
+                    <p className={`mt-3 mb-3 ${styles.darkBlue}`}>
                         REGISTER
-                    </h5>
+                    </p>
                     <form>
                         <input
                             className={`${styles.form} form-control d-inline-block`}
@@ -133,7 +133,7 @@ const Register = () => {
                             name="Email"
                         />
 
-                        <div className="d-flex justify-content-center mb-3">
+                        <div className="d-flex justify-content-center mb-1">
                             <select
                                 className="form-select"
                                 aria-label="Default select example"
@@ -147,7 +147,7 @@ const Register = () => {
                             </select>
                         </div>
 
-                        <div className="d-flex justify-content-center mb-3">
+                        <div className="d-flex justify-content-center mb-1">
                             <div className="d-flex justify-content-center">
                                 <select
                                     name='State'
@@ -198,7 +198,7 @@ const Register = () => {
                             </div>
                         </div>
 
-                        <div className="d-flex justify-content-center mb-4">
+                        <div className="d-flex justify-content-center mb-2">
                             <div className="d-flex justify-content-center">
                                 <select
                                     name='educationalMaingroups'
@@ -223,9 +223,9 @@ const Register = () => {
                             </div>
                         </div>
 
-                        <button onClick={handleRegister} className={`btn text-white mt-5 ${styles.registerBtn}`}>Register
+                        <button onClick={handleRegister} className={`btn text-white mt-4 ${styles.registerBtn}`}>Register
                         </button>
-                        <p className={`${styles.darkBlue} pt-3`}>or</p>
+                        <p className={`${styles.darkBlue} pt-1 mb-1`}>or</p>
                         <button className={`btn ${styles.kanoonBtn}`}>Sign in with kanoon.ir</button>
                         <p className={`${styles.darkBlue} pt-5`}>Already have an account?</p>
 

@@ -26,6 +26,7 @@ form input {
     background-color: #f3f3f3;
     border: none;
     outline: none;
+    border-radius: 13px;
     /*display: inline !important;*/
 }
 .d-flex .d-flex .form-select{
