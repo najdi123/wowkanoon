@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import  styles from './table.module.css'
-import axios from 'axios'
+import  styles from './table.module.css';
+import axios from 'axios';
 
 const Table = () => {
     const [data, setData] = useState([]);
