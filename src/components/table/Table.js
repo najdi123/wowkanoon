@@ -28,7 +28,7 @@ const Table = () => {
                  <th scope="col">Grade<div className={styles.header}/></th>
                  <th scope="col">Words<div className={styles.header}/></th>
                  <th scope="col"><div className={styles.header}/></th>
-                 <th scope="col"><div  className={styles.header}/></th>
+                 <th scope="col"><div  className={styles.header}/></th>9
                  <th scope="col"><div  className={styles.header}/></th>
                  <th scope="col"><div  className={styles.header}/></th>
                  <th scope="col"><div  className={styles.header}/></th>
@@ -48,7 +48,7 @@ const Table = () => {
                          {index + 1}{'.'}
                          <i className={`fas fa-user ${styles.icon}`}></i>
                      </th>
-                     <td>{item.Name}</td>
+                     <td>{item.Name}{'  '}{item.Family}</td>
                      <td>{item.Score}</td>
                      <td>@mdo</td>
                      <td>@mdo</td>
