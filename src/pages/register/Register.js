@@ -81,6 +81,38 @@ const Register = () => {
                         REGISTER
                     </p>
                     <form>
+
+                        <div className="input-group has-validation ">
+                            {/*<span className="input-group-text" id="inputGroupPrepend">@</span>*/}
+                            <input
+                                type="text"
+                                className={`${styles.form} form-control d-inline-block`}
+                                placeholder='&#xf007;   Name'
+                                onChange={handleChange}
+                                value={input.Name}
+                                name="Name"
+                                id="validationCustomUsername"
+                                aria-describedby="inputGroupPrepend"
+                                required
+                            />
+                                <div className="invalid-feedback">
+                                    Please choose a username.
+                                </div>
+                        </div>
+                        <div>
+                            <label htmlFor="validationDefault01" className="form-label">First name</label>
+                            <input
+                                type="text"
+                                className={`${styles.form} form-control d-inline-block`}
+                                placeholder='&#xf007;   Name'
+                                // onChange={(e)=>setInput(prevState=>({...prevState, "name":e.target.value }))}
+                                onChange={handleChange}
+                                value={input.Name}
+                                name="Name"
+                                id="validationDefault01"
+
+                                required />
+                        </div>
                         <input
                             className={`${styles.form} form-control d-inline-block`}
                             placeholder='&#xf007;   Name'

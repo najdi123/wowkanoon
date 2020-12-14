@@ -28,7 +28,7 @@ const Table = () => {
                  <th scope="col">Grade<div className={styles.header}/></th>
                  <th scope="col">Words<div className={styles.header}/></th>
                  <th scope="col"><div className={styles.header}/></th>
-                 <th scope="col"><div  className={styles.header}/></th>9
+                 <th scope="col"><div  className={styles.header}/></th>
                  <th scope="col"><div  className={styles.header}/></th>
                  <th scope="col"><div  className={styles.header}/></th>
                  <th scope="col"><div  className={styles.header}/></th>

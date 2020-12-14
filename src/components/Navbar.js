@@ -66,14 +66,14 @@ const Navbar = () => {
                             (
                                 <>
                                     <Link to="/user" className="d-flex linkStyle">
-                                        <div className={`userName ${styles.userName}`}>{user}</div>
-                                        <div className={`userAvatar ${styles.userAvatar}`}>
+                                        <div className={`userName `}>{user}</div>
+                                        <div className={`userAvatar `}>
                                             '
                                         </div>
                                     </Link>
                                     <Link to="#" className="langBox d-flex linkStyle">
                                         <div className="langBox d-flex">
-                                            <div className={styles.userName}>FA</div>
+                                            <div className="userName">FA</div>
                                             <img className="flag" src={IranFlag} alt=""/>
                                         </div>
                                     </Link>
